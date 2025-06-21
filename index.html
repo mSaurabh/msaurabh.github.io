@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saurabh Mankar - Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            overflow-x: hidden;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00d4ff, #5b21b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #00d4ff, #5b21b6);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 10;
+            position: relative;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffffff, #00d4ff, #5b21b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: rgba(0, 212, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+            position: relative;
+            z-index: 20;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
+            background: rgba(0, 212, 255, 0.3);
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+
+        .cta-button.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(0, 212, 255, 0.2);
+            color: white;
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Floating shapes */
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(0, 212, 255, 0.2), rgba(91, 33, 182, 0.2));
+            animation: float 6s ease-in-out infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .shape1 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape2 {
+            width: 150px;
+            height: 150px;
+            bottom: 20%;
+            left: 5%;
+            animation-delay: 2s;
+        }
+
+        .shape3 {
+            width: 80px;
+            height: 80px;
+            top: 60%;
+            right: 20%;
+            animation-delay: 4s;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: rgba(15, 15, 35, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 50px;
+            background: linear-gradient(45deg, #00d4ff, #5b21b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .skill-tag {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.2);
+        }
+
+        .skill-tag:hover {
+            transform: scale(1.1);
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 100px 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #00d4ff;
+        }
+
+        .project-description {
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .project-link {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #4ecdc4;
+        }
+
+        /* Certifications Section */
+        .certifications {
+            padding: 100px 0;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .cert-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .cert-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cert-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .cert-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #00d4ff;
+        }
+
+        .cert-org {
+            color: white;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .cert-date {
+            color: #5b21b6;
+            font-weight: bold;
+        }
+        .contact {
+            padding: 100px 0;
+            background: rgba(15, 15, 35, 0.8);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-item {
+            padding: 20px;
+            background: rgba(15, 15, 35, 0.6);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background-size: 200% 200%;
+                background-position: 0% 50%;
+            }
+            50% {
+                background-size: 200% 200%;
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">SM</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Saurabh Mankar</h1>
+                <p>Software Engineer & Full-Stack Developer</p>
+                <div style="display: flex; gap: 20px; margin-top: 30px;">
+                    <a href="#projects" class="cta-button">View My Work</a>
+                    <a href="#contact" class="cta-button secondary">Let's Connect</a>
+                </div>
+            </div>
+        </div>
+        <div class="floating-shape shape1"></div>
+        <div class="floating-shape shape2"></div>
+        <div class="floating-shape shape3"></div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm an experienced software engineer with over 15 years in the industry, spanning Banking, Consulting, Energy & Utility, and Insurance sectors. Currently serving as a Manager at Pariveda Solutions, I specialize in process improvement, agile methodology, and full-stack development.</p>
+                    <p>My expertise lies in transforming complex business challenges into scalable technical solutions, leading cross-functional teams across international time zones, and driving significant improvements in operational efficiency.</p>
+                    <div class="skills">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">React Native</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">GCP</span>
+                        <span class="skill-tag">Agile</span>
+                        <span class="skill-tag">Leadership</span>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div style="width: 300px; height: 300px; background: linear-gradient(45deg, #00d4ff, #5b21b6); border-radius: 50%; margin: 0 auto; animation: float 4s ease-in-out infinite;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 class="project-title">AI Crisis Management API Modernization</h3>
+                    <p class="project-description">Architected and led modernization of a crisis management training handbook by creating an intelligent API service using AWS Lambda, Bedrock, Data Ingestion, and Guardrails to ensure relevant and accurate information delivery for emergency response training.</p>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Issue Resolution System Migration</h3>
+                    <p class="project-description">Led the transition from single mailbox to Jira Service Desk-based solution, achieving 50-60% reduction in issue resolution time and implementing custom dashboards for data-driven decision-making.</p>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Champagner Mass Messaging App</h3>
+                    <p class="project-description">Spearheaded the design and development of a custom mass messaging app using React Native that generated over $50K revenue in 4 months, including Google Cloud Function integration.</p>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Frontend Technology Migration</h3>
+                    <p class="project-description">Successfully led migration from Knockout JS to React using Ilities framework, resulting in improved user experience and enhanced maintainability for enterprise applications.</p>
+                </div>
+                <div class="project-card">
+                    <h3 class="project-title">Data Pipeline Optimization</h3>
+                    <p class="project-description">Designed data extraction tools that streamlined multi-source data integration, reducing database setup time from 2 weeks to 2 days and improving operational efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications & Education</h2>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <div class="cert-logo">
+                        <img src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-AI-Practitioner_badge.69d591da6e60d55bb1a8a41ed44bfe41b6e5c0e8.png" alt="AWS AI Practitioner Badge" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                    <h3 class="cert-title">AWS AI Cloud Practitioner</h3>
+                    <p class="cert-org">Amazon Web Services</p>
+                    <p class="cert-date">2024</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-logo">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="24" height="24" rx="4" fill="#009FDA"/>
+                            <path d="M6 8.5h12v7H6z" fill="white"/>
+                            <path d="M8 10v4h2v-4H8zm4 0v4h2v-4h-2z" fill="#009FDA"/>
+                        </svg>
+                    </div>
+                    <h3 class="cert-title">Professional Scrum Master</h3>
+                    <p class="cert-org">Scrum.org</p>
+                    <p class="cert-date">March 2021</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-logo">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #00d4ff, #5b21b6); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 1.2rem;">MS</div>
+                    </div>
+                    <h3 class="cert-title">M.S. Computer Engineering</h3>
+                    <p class="cert-org">University of Central Florida</p>
+                    <p class="cert-date">May 2014</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-logo">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #00d4ff, #5b21b6); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 1.2rem;">BS</div>
+                    </div>
+                    <h3 class="cert-title">B.S. Electronics Engineering</h3>
+                    <p class="cert-org">Mumbai University</p>
+                    <p class="cert-date">May 2008</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <div class="cert-logo">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #00d4ff, #5b21b6); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 2rem;">📧</div>
+                    </div>
+                    <h3 class="cert-title">Email</h3>
+                    <p class="cert-org"><a href="mailto:mankar.saurabh@gmail.com" style="color: white; text-decoration: none;">mankar.saurabh@gmail.com</a></p>
+                    <p class="cert-date">Direct Communication</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-logo">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #00d4ff, #5b21b6); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 2rem;">💼</div>
+                    </div>
+                    <h3 class="cert-title">LinkedIn</h3>
+                    <p class="cert-org"><a href="https://www.linkedin.com/in/saurabh-mankar-6368a362/" style="color: white; text-decoration: none;">Connect with me</a></p>
+                    <p class="cert-date">Professional Network</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-logo">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #00d4ff, #5b21b6); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 2rem;">💻</div>
+                    </div>
+                    <h3 class="cert-title">GitHub</h3>
+                    <p class="cert-org"><a href="https://github.com/mSaurabh" style="color: white; text-decoration: none;">View my projects</a></p>
+                    <p class="cert-date">Code Repository</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-logo">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #00d4ff, #5b21b6); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 2rem;">📱</div>
+                    </div>
+                    <h3 class="cert-title">Phone</h3>
+                    <p class="cert-org"><a href="tel:330-999-0690" style="color: white; text-decoration: none;">330-999-0690</a></p>
+                    <p class="cert-date">Direct Call</p>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; color: rgba(255, 255, 255, 0.7); text-align: center;">
+                <p>📍 Based in Houston, Texas</p>
+                <p>🎓 M.S. Computer Engineering, University of Central Florida</p>
+                <p>🏆 Professional Scrum Master & AWS AI Cloud Practitioner Certified</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.project-card, .contact-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(50px)';
+            observer.observe(el);
+        });
+
+        // Interactive cursor effect
+        document.addEventListener('mousemove', (e) => {
+            const shapes = document.querySelectorAll('.floating-shape');
+            shapes.forEach((shape, index) => {
+                const speed = (index + 1) * 0.01;
+                const x = e.clientX * speed;
+                const y = e.clientY * speed;
+                shape.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
