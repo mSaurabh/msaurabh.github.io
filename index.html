@@ -102,11 +102,12 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding: 80px 0 40px;
         }
 
         .hero-content {
@@ -250,7 +251,7 @@
 
         /* About Section */
         .about {
-            padding: 100px 0;
+            padding: 80px 0;
             background: rgba(15, 15, 35, 0.8);
             backdrop-filter: blur(10px);
         }
@@ -267,7 +268,7 @@
 
         .about-content {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
             align-items: center;
         }
@@ -282,7 +283,7 @@
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 30px;
-            justify-content: center;
+            justify-content: flex-start;
         }
 
         .skill-tag {
@@ -304,27 +305,23 @@
             box-shadow: 0 6px 20px rgba(0, 212, 255, 0.2);
         }
 
-        .skill-tag:hover {
-            transform: scale(1.1);
-        }
-
         /* Projects Section */
         .projects {
-            padding: 100px 0;
+            padding: 80px 0;
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
         }
 
         .project-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
             border-radius: 20px;
-            padding: 30px;
+            padding: 25px;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -338,7 +335,7 @@
         }
 
         .project-title {
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
             margin-bottom: 15px;
             color: #00d4ff;
         }
@@ -346,40 +343,32 @@
         .project-description {
             margin-bottom: 20px;
             opacity: 0.9;
-        }
-
-        .project-link {
-            color: #ff6b6b;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .project-link:hover {
-            color: #4ecdc4;
+            font-size: clamp(0.9rem, 3vw, 1rem);
+            line-height: 1.6;
         }
 
         /* Certifications Section */
         .certifications {
-            padding: 100px 0;
+            padding: 80px 0;
         }
 
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
         }
 
         .cert-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
             border-radius: 20px;
-            padding: 30px;
+            padding: 25px;
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            position: relative;
         }
 
         .cert-card:hover {
@@ -387,6 +376,30 @@
             box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
             border-color: rgba(0, 212, 255, 0.3);
             background: rgba(255, 255, 255, 0.08);
+        }
+
+        .verified-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 24px;
+            height: 24px;
+            background: #1DA1F2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(29, 161, 242, 0.3);
+            z-index: 5;
+        }
+
+        .verified-badge::before {
+            content: '✓';
+            font-size: 12px;
         }
 
         .cert-logo {
@@ -398,6 +411,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
         .cert-logo img {
@@ -407,7 +421,7 @@
         }
 
         .cert-title {
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
             font-weight: bold;
             margin-bottom: 10px;
             color: #00d4ff;
@@ -417,36 +431,21 @@
             color: white;
             margin-bottom: 10px;
             font-weight: 500;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
 
         .cert-date {
             color: #5b21b6;
             font-weight: bold;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
         }
+
+        /* Contact Section */
         .contact {
-            padding: 100px 0;
+            padding: 80px 0;
             background: rgba(15, 15, 35, 0.8);
             backdrop-filter: blur(10px);
             text-align: center;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 50px;
-        }
-
-        .contact-item {
-            padding: 20px;
-            background: rgba(15, 15, 35, 0.6);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: scale(1.05);
         }
 
         /* Animations */
@@ -483,17 +482,111 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
             .nav-links {
                 display: none;
             }
-            
-            .about-content {
-                grid-template-columns: 1fr;
+
+            .mobile-menu {
+                display: flex;
             }
             
-            .contact-info {
+            .hero {
+                padding: 80px 0 40px;
+                min-height: 100vh;
+            }
+            
+            .hero-content {
                 flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            
+            .profile-section {
+                flex: none;
+                order: -1;
+            }
+            
+            .profile-image {
+                width: 180px;
+                height: 180px;
+            }
+
+            .hero-text div {
+                flex-direction: column;
+                gap: 15px;
                 align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 200px;
+            }
+            
+            .about, .projects, .certifications, .contact {
+                padding: 60px 0;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-visual {
+                display: none;
+            }
+
+            .skills {
+                justify-content: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .certifications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+            }
+
+            .floating-shape {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .cert-logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card, .cert-card {
+                padding: 20px;
             }
         }
     </style>
@@ -602,6 +695,7 @@
             <h2 class="section-title">Certifications & Education</h2>
             <div class="certifications-grid">
                 <div class="cert-card">
+                    <div class="verified-badge"></div>
                     <div class="cert-logo">
                         <img src="https://images.credly.com/size/680x680/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png" alt="AWS AI Practitioner Badge" style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
@@ -610,6 +704,7 @@
                     <p class="cert-date">2024</p>
                 </div>
                 <div class="cert-card">
+                    <div class="verified-badge"></div>
                     <div class="cert-logo">
                         <img src="https://images.credly.com/size/680x680/images/a2790314-008a-4c3d-9553-f5e84eb359ba/image.png" alt="PSM" style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
@@ -625,14 +720,6 @@
                     <p class="cert-org">University of Central Florida</p>
                     <p class="cert-date">May 2014</p>
                 </div>
-<!--                 <div class="cert-card">
-                    <div class="cert-logo">
-                        <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #00d4ff, #5b21b6); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 1.2rem;">BS</div>
-                    </div>
-                    <h3 class="cert-title">B.S. Electronics Engineering</h3>
-                    <p class="cert-org">Mumbai University</p>
-                    <p class="cert-date">May 2008</p>
-                </div> -->
             </div>
         </div>
     </section>
@@ -654,7 +741,6 @@
                         <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #00d4ff, #5b21b6); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 2rem;">💼</div>
                     </div>
                     <h3 class="cert-title">LinkedIn</h3>
-                    <p class="cert-org"><a href="https://www.linkedin.com/in/saurabh-mankar-6368a362/" style="color: white; text-decoration: none;">Connect with me</a></p>
                     <p class="cert-date">Professional Network</p>
                 </div>
                 <div class="cert-card">
@@ -665,14 +751,6 @@
                     <p class="cert-org"><a href="https://github.com/mSaurabh" style="color: white; text-decoration: none;">View my projects</a></p>
                     <p class="cert-date">Code Repository</p>
                 </div>
-<!--                 <div class="cert-card">
-                    <div class="cert-logo">
-                        <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #00d4ff, #5b21b6); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 2rem;">📱</div>
-                    </div>
-                    <h3 class="cert-title">Phone</h3>
-                    <p class="cert-org"><a href="tel:330-999-0690" style="color: white; text-decoration: none;">330-999-0690</a></p>
-                    <p class="cert-date">Direct Call</p>
-                </div> -->
             </div>
             <div style="margin-top: 3rem; color: rgba(255, 255, 255, 0.7); text-align: center;">
                 <p>📍 Based in Houston, Texas</p>
@@ -717,7 +795,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.project-card, .contact-item').forEach(el => {
+        document.querySelectorAll('.project-card, .cert-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(50px)';
             observer.observe(el);
