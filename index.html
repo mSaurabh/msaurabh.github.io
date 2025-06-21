@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saurabh Mankar - Software Engineer</title>
+    <title>Saurabh Mankar - Senior Software Engineer</title>
     <style>
         * {
             margin: 0;
@@ -97,6 +97,49 @@
             z-index: 10;
             position: relative;
             animation: fadeInUp 1s ease;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            width: 100%;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .profile-section {
+            flex: 0 0 300px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 3px solid rgba(0, 212, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-image:hover {
+            border-color: rgba(0, 212, 255, 0.6);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
         }
 
         .hero h1 {
@@ -453,11 +496,18 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Saurabh Mankar</h1>
-                <p>Software Engineer & Full-Stack Developer</p>
-                <div style="display: flex; gap: 20px; margin-top: 30px;">
-                    <a href="#projects" class="cta-button">View My Work</a>
-                    <a href="#contact" class="cta-button secondary">Let's Connect</a>
+                <div class="hero-text">
+                    <h1>Saurabh Mankar</h1>
+                    <p>Software Engineer & Full-Stack Developer</p>
+                    <div style="display: flex; gap: 20px; margin-top: 30px;">
+                        <a href="#projects" class="cta-button">View My Work</a>
+                        <a href="#contact" class="cta-button secondary">Let's Connect</a>
+                    </div>
+                </div>
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQGk_JIhDlC95g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1676301580163?e=1755734400&v=beta&t=wyeJcB5ZegVhm0t8M9bLB3UaRsxEy2GUgSoD9Hg_dAs" alt="Saurabh Mankar Profile Photo">
+                    </div>
                 </div>
             </div>
         </div>
