@@ -341,10 +341,34 @@
         }
 
         .project-description {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             opacity: 0.9;
             font-size: clamp(0.9rem, 3vw, 1rem);
             line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .project-tag {
+            padding: 4px 12px;
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 15px;
+            font-size: clamp(0.7rem, 2vw, 0.8rem);
+            font-weight: 500;
+            color: #00d4ff;
+            transition: all 0.3s ease;
+        }
+
+        .project-tag:hover {
+            background: rgba(0, 212, 255, 0.25);
+            border-color: rgba(0, 212, 255, 0.5);
+            transform: scale(1.05);
         }
 
         /* Certifications Section */
@@ -700,7 +724,7 @@
                         <img src="https://images.credly.com/size/680x680/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png" alt="AWS AI Practitioner Badge" style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
                     <h3 class="cert-title">AWS AI Cloud Practitioner</h3>
-                    <p class="cert-org"><a href="https://www.credly.com/badges/2b1ee5f9-d309-4fdf-9441-101ad8d6bb26" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">Amazon Web Services</a></p>
+                    <p class="cert-org"><a href="https://www.credly.com/earner/earned/badge/2b1ee5f9-d309-4fdf-9441-101ad8d6bb26" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">Amazon Web Services</a></p>
                     <p class="cert-date">2024</p>
                 </div>
                 <div class="cert-card">
@@ -709,7 +733,7 @@
                         <img src="https://images.credly.com/size/680x680/images/a2790314-008a-4c3d-9553-f5e84eb359ba/image.png" alt="PSM" style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
                     <h3 class="cert-title">Professional Scrum Master</h3>
-                    <p class="cert-org"><a href="https://www.credly.com/badges/66a9fd47-1a38-4d62-85f2-226983136d71" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">Scrum.org</a></p>
+                    <p class="cert-org"><a href="https://www.credly.com/earner/earned/badge/66a9fd47-1a38-4d62-85f2-226983136d71" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">Scrum.org</a></p>
                     <p class="cert-date">March 2021</p>
                 </div>
                 <div class="cert-card">
@@ -761,12 +785,284 @@
     </section>
 
     <script>
+        let portfolioData = {};
+
+        // Function to load JSON data from external file
+        async function loadPortfolioData() {
+            try {
+                const response = await fetch('./portfolio-data.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                portfolioData = await response.json();
+                populateContent();
+            } catch (error) {
+                console.error('Error loading portfolio data:', error);
+                // Fallback data in case JSON file is not accessible
+                portfolioData = {
+                    "hero": {
+                        "name": "Saurabh Mankar",
+                        "title": "Software Engineer & Full-Stack Developer"
+                    },
+                    "about": {
+                        "title": "About Me",
+                        "paragraphs": [
+                            "I'm a software engineer with 15+ years of experience working across different industries like banking, consulting, energy, and insurance. Right now, I work as a Senior Software Engineer at Pariveda Solutions where I help teams work better, build apps, and solve problems using technology.",
+                            "I love taking complicated business problems and turning them into simple, working solutions. I've worked with teams all over the world and helped companies save time and money by making their processes better."
+                        ],
+                        "skills": ["Java", "React", "JavaScript", "SQL", "C#", "React Native", "TypeScript", "Google Cloud", "AWS", "Agile", "Leadership"]
+                    },
+                    "projects": {
+                        "title": "Featured Projects",
+                        "items": [
+                            {
+                                "title": "AI Crisis Management API",
+                                "description": "Built a smart API that helps crisis management teams get the right information fast. The old system was just a handbook - now it's an intelligent service that knows what you need and gives you the right answers for emergency situations.",
+                                "technologies": ["AWS Lambda", "AWS Bedrock", "API Development", "Data Processing", "AI/ML"]
+                            },
+                            {
+                                "title": "Help Desk System Upgrade",
+                                "description": "Our team was drowning in emails from a single inbox. I led the move to Jira Service Desk and built dashboards that show what's actually happening. Now we solve problems 50-60% faster because we can see patterns and track everything properly.",
+                                "technologies": ["Jira", "Dashboard Development", "Process Improvement", "Data Analytics"]
+                            },
+                            {
+                                "title": "Champagner Messaging App",
+                                "description": "Built a mobile app that lets businesses send mass messages to their customers. The app made over $50K in just 4 months and cut setup time in half by connecting everything to Google Cloud automatically.",
+                                "technologies": ["React Native", "Google Cloud Functions", "Mobile Development", "TypeScript"]
+                            },
+                            {
+                                "title": "Website Technology Upgrade",
+                                "description": "Led a team to move our old website from outdated Knockout.js to modern React. The new site loads faster, works better on phones, and is much easier for developers to update and maintain.",
+                                "technologies": ["React", "JavaScript", "Frontend Migration", "Ilities Framework"]
+                            },
+                            {
+                                "title": "Data Pipeline Builder",
+                                "description": "Created tools that automatically pull data from different sources and put it all in one place. What used to take 2 weeks of manual work now happens in 2 days, and we can spot problems 50% faster.",
+                                "technologies": ["C#", "SQL Server", "Data Engineering", "Visual Studio", "ETL"]
+                            },
+                            {
+                                "title": "Banking Product Development",
+                                "description": "At Infosys, I helped build one of the company's main banking products from the ground up. Worked with teams in India and Singapore to make sure everything worked smoothly for customers around the world.",
+                                "technologies": ["Java", "HTML", "CSS", "SQL", "Shell Scripting", "International Collaboration"]
+                            }
+                        ]
+                    },
+                    "certifications": {
+                        "title": "Certifications & Education",
+                        "items": [
+                            {
+                                "title": "AWS AI Cloud Practitioner",
+                                "organization": "Amazon Web Services",
+                                "date": "2024",
+                                "logo": "https://images.credly.com/size/680x680/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png",
+                                "verified": true,
+                                "link": "https://www.credly.com/earner/earned/badge/2b1ee5f9-d309-4fdf-9441-101ad8d6bb26"
+                            },
+                            {
+                                "title": "Professional Scrum Master",
+                                "organization": "Scrum.org",
+                                "date": "March 2021",
+                                "logo": "https://images.credly.com/size/680x680/images/a2790314-008a-4c3d-9553-f5e84eb359ba/image.png",
+                                "verified": true,
+                                "link": "https://www.credly.com/earner/earned/badge/66a9fd47-1a38-4d62-85f2-226983136d71"
+                            },
+                            {
+                                "title": "M.S. Computer Engineering",
+                                "organization": "University of Central Florida",
+                                "date": "May 2014",
+                                "logo": "gradient",
+                                "logoText": "MS",
+                                "verified": false
+                            }
+                        ]
+                    },
+                    "contact": {
+                        "title": "Let's Connect",
+                        "items": [
+                            {
+                                "title": "Email",
+                                "value": "mankar.saurabh@gmail.com",
+                                "description": "Direct Communication",
+                                "icon": "📧",
+                                "link": "mailto:mankar.saurabh@gmail.com"
+                            },
+                            {
+                                "title": "LinkedIn",
+                                "value": "Connect with me",
+                                "description": "Professional Network",
+                                "icon": "💼",
+                                "link": "https://www.linkedin.com/in/saurabh-mankar-6368a362/"
+                            },
+                            {
+                                "title": "GitHub",
+                                "value": "View my projects",
+                                "description": "Code Repository",
+                                "icon": "💻",
+                                "link": "https://github.com/mSaurabh"
+                            }
+                        ],
+                        "footer": [
+                            "📍 Based in Houston, Texas",
+                            "🎓 M.S. Computer Engineering, University of Central Florida",
+                            "🏆 Professional Scrum Master & AWS AI Cloud Practitioner Certified"
+                        ]
+                    }
+                };
+                populateContent();
+            }
+        }
+
+        // Function to populate content from JSON data
+        function populateContent() {
+            if (!portfolioData || !portfolioData.hero) {
+                console.error('Portfolio data not loaded properly');
+                return;
+            }
+
+            // Hero section
+            const heroName = document.querySelector('.hero h1');
+            const heroTitle = document.querySelector('.hero p');
+            if (heroName) heroName.textContent = portfolioData.hero.name;
+            if (heroTitle) heroTitle.textContent = portfolioData.hero.title;
+
+            // About section
+            const aboutTitle = document.querySelector('#about .section-title');
+            if (aboutTitle) aboutTitle.textContent = portfolioData.about.title;
+            
+            const aboutText = document.querySelector('.about-text');
+            if (aboutText) {
+                aboutText.innerHTML = '';
+                portfolioData.about.paragraphs.forEach(paragraph => {
+                    const p = document.createElement('p');
+                    p.textContent = paragraph;
+                    aboutText.appendChild(p);
+                });
+                
+                // Skills
+                const skillsContainer = document.createElement('div');
+                skillsContainer.className = 'skills';
+                portfolioData.about.skills.forEach(skill => {
+                    const span = document.createElement('span');
+                    span.className = 'skill-tag';
+                    span.textContent = skill;
+                    skillsContainer.appendChild(span);
+                });
+                aboutText.appendChild(skillsContainer);
+            }
+
+            // Projects section
+            const projectsTitle = document.querySelector('#projects .section-title');
+            if (projectsTitle) projectsTitle.textContent = portfolioData.projects.title;
+            
+            const projectsGrid = document.querySelector('.projects-grid');
+            if (projectsGrid) {
+                projectsGrid.innerHTML = '';
+                portfolioData.projects.items.forEach(project => {
+                    const projectCard = document.createElement('div');
+                    projectCard.className = 'project-card';
+                    
+                    let tagsHtml = '';
+                    if (project.technologies && project.technologies.length > 0) {
+                        const tags = project.technologies.map(tech => 
+                            `<span class="project-tag">${tech}</span>`
+                        ).join('');
+                        tagsHtml = `<div class="project-tags">${tags}</div>`;
+                    }
+                    
+                    projectCard.innerHTML = `
+                        <h3 class="project-title">${project.title}</h3>
+                        <p class="project-description">${project.description}</p>
+                        ${tagsHtml}
+                    `;
+                    projectsGrid.appendChild(projectCard);
+                });
+            }
+
+            // Certifications section
+            const certsTitle = document.querySelector('#certifications .section-title');
+            if (certsTitle) certsTitle.textContent = portfolioData.certifications.title;
+            
+            const certsGrid = document.querySelector('#certifications .certifications-grid');
+            if (certsGrid) {
+                certsGrid.innerHTML = '';
+                portfolioData.certifications.items.forEach(cert => {
+                    const certCard = document.createElement('div');
+                    certCard.className = 'cert-card';
+                    
+                    let logoHtml = '';
+                    if (cert.logo === 'gradient') {
+                        logoHtml = `<div style="width: 80px; height: 80px; background: linear-gradient(45deg, #00d4ff, #5b21b6); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 1.2rem;">${cert.logoText}</div>`;
+                    } else {
+                        logoHtml = `<img src="${cert.logo}" alt="${cert.title}" style="width: 100%; height: 100%; object-fit: contain;">`;
+                    }
+
+                    const orgHtml = cert.link 
+                        ? `<a href="${cert.link}" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">${cert.organization}</a>`
+                        : cert.organization;
+
+                    certCard.innerHTML = `
+                        ${cert.verified ? '<div class="verified-badge"></div>' : ''}
+                        <div class="cert-logo">${logoHtml}</div>
+                        <h3 class="cert-title">${cert.title}</h3>
+                        <p class="cert-org">${orgHtml}</p>
+                        <p class="cert-date">${cert.date}</p>
+                    `;
+                    certsGrid.appendChild(certCard);
+                });
+            }
+
+            // Contact section
+            const contactTitle = document.querySelector('#contact .section-title');
+            if (contactTitle) contactTitle.textContent = portfolioData.contact.title;
+            
+            const contactGrid = document.querySelector('#contact .certifications-grid');
+            if (contactGrid) {
+                contactGrid.innerHTML = '';
+                portfolioData.contact.items.forEach(contact => {
+                    const contactCard = document.createElement('div');
+                    contactCard.className = 'cert-card';
+                    contactCard.innerHTML = `
+                        <div class="cert-logo">
+                            <div style="width: 80px; height: 80px; background: linear-gradient(45deg, #00d4ff, #5b21b6); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 2rem;">${contact.icon}</div>
+                        </div>
+                        <h3 class="cert-title">${contact.title}</h3>
+                        <p class="cert-org"><a href="${contact.link}" style="color: white; text-decoration: none;">${contact.value}</a></p>
+                        <p class="cert-date">${contact.description}</p>
+                    `;
+                    contactGrid.appendChild(contactCard);
+                });
+            }
+
+            // Contact footer
+            const contactFooter = document.querySelector('#contact div[style*="margin-top: 3rem"]');
+            if (contactFooter && portfolioData.contact.footer) {
+                contactFooter.innerHTML = portfolioData.contact.footer.map(item => `<p>${item}</p>`).join('');
+            }
+
+            // Apply scroll animations after content is loaded
+            setTimeout(() => {
+                document.querySelectorAll('.project-card, .cert-card').forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(50px)';
+                    observer.observe(el);
+                });
+            }, 100);
+        }
+
+        // Initialize content when page loads
+        document.addEventListener('DOMContentLoaded', loadPortfolioData);
+
         // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
         });
@@ -774,10 +1070,12 @@
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+            if (navbar) {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
             }
         });
 
@@ -794,12 +1092,6 @@
                 }
             });
         }, observerOptions);
-
-        document.querySelectorAll('.project-card, .cert-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(50px)';
-            observer.observe(el);
-        });
 
         // Interactive cursor effect
         document.addEventListener('mousemove', (e) => {
