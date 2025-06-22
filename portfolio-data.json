@@ -1,0 +1,109 @@
+{
+    "hero": {
+        "name": "Saurabh Mankar",
+        "title": "Software Engineer & Full-Stack Developer"
+    },
+    "about": {
+        "title": "About Me",
+        "paragraphs": [
+            "I'm a software engineer with 15+ years of experience working across different industries like banking, consulting, energy, and insurance. Right now, I work as a Senior Software Engineer at Pariveda Solutions where I help teams work better, build apps, and solve problems using technology.",
+            "I love taking complicated business problems and turning them into simple, working solutions. I've worked with teams all over the world and helped companies save time and money by making their processes better."
+        ],
+        "skills": ["Java", "React", "JavaScript", "SQL", "C#", "React Native", "TypeScript", "Google Cloud", "AWS", "Agile", "Leadership"]
+    },
+    "projects": {
+        "title": "Featured Projects",
+        "items": [
+            {
+                "title": "AI Crisis Management API",
+                "description": "Built a smart API that helps crisis management teams get the right information fast. The old system was just a handbook - now it's an intelligent service that knows what you need and gives you the right answers for emergency situations.",
+                "technologies": ["AWS Lambda", "AWS Bedrock", "API Development", "Data Processing", "AI/ML"]
+            },
+            {
+                "title": "Help Desk System Upgrade",
+                "description": "Our team was drowning in emails from a single inbox. I led the move to Jira Service Desk and built dashboards that show what's actually happening. Now we solve problems 50-60% faster because we can see patterns and track everything properly.",
+                "technologies": ["Jira", "Dashboard Development", "Process Improvement", "Data Analytics"]
+            },
+            {
+                "title": "Champagner Messaging App",
+                "description": "Built a mobile app that lets businesses send mass messages to their customers. The app made over $50K in just 4 months and cut setup time in half by connecting everything to Google Cloud automatically.",
+                "technologies": ["React Native", "Google Cloud Functions", "Mobile Development", "TypeScript"]
+            },
+            {
+                "title": "Website Technology Upgrade",
+                "description": "Led a team to move our old website from outdated Knockout.js to modern React. The new site loads faster, works better on phones, and is much easier for developers to update and maintain.",
+                "technologies": ["React", "JavaScript", "Frontend Migration", "Ilities Framework"]
+            },
+            {
+                "title": "Data Pipeline Builder",
+                "description": "Created tools that automatically pull data from different sources and put it all in one place. What used to take 2 weeks of manual work now happens in 2 days, and we can spot problems 50% faster.",
+                "technologies": ["C#", "SQL Server", "Data Engineering", "Visual Studio", "ETL"]
+            },
+            {
+                "title": "Banking Product Development",
+                "description": "At Infosys, I helped build one of the company's main banking products from the ground up. Worked with teams in India and Singapore to make sure everything worked smoothly for customers around the world.",
+                "technologies": ["Java", "HTML", "CSS", "SQL", "Shell Scripting", "International Collaboration"]
+            }
+        ]
+    },
+    "certifications": {
+        "title": "Certifications & Education",
+        "items": [
+            {
+                "title": "AWS AI Cloud Practitioner",
+                "organization": "Amazon Web Services",
+                "date": "2024",
+                "logo": "https://images.credly.com/size/680x680/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png",
+                "verified": true,
+                "link": "https://www.credly.com/earner/earned/badge/2b1ee5f9-d309-4fdf-9441-101ad8d6bb26"
+            },
+            {
+                "title": "Professional Scrum Master",
+                "organization": "Scrum.org",
+                "date": "March 2021",
+                "logo": "https://images.credly.com/size/680x680/images/a2790314-008a-4c3d-9553-f5e84eb359ba/image.png",
+                "verified": true,
+                "link": "https://www.credly.com/earner/earned/badge/66a9fd47-1a38-4d62-85f2-226983136d71"
+            },
+            {
+                "title": "M.S. Computer Engineering",
+                "organization": "University of Central Florida",
+                "date": "May 2014",
+                "logo": "gradient",
+                "logoText": "MS",
+                "verified": false
+            }
+        ]
+    },
+    "contact": {
+        "title": "Let's Connect",
+        "items": [
+            {
+                "title": "Email",
+                "value": "mankar.saurabh@gmail.com",
+                "description": "Direct Communication",
+                "icon": "📧",
+                "link": "mailto:mankar.saurabh@gmail.com"
+            },
+            {
+                "title": "LinkedIn",
+                "value": "Connect with me",
+                "description": "Professional Network",
+                "icon": "💼",
+                "link": "https://www.linkedin.com/in/saurabh-mankar-6368a362/"
+            },
+            {
+                "title": "GitHub",
+                "value": "View my projects",
+                "description": "Code Repository",
+                "icon": "💻",
+                "link": "https://github.com/mSaurabh"
+            }
+        ],
+        "footer": [
+            "📍 Based in Houston, Texas",
+            "🎓 M.S. Computer Engineering, University of Central Florida",
+            "🏆 Professional Scrum Master & AWS AI Cloud Practitioner Certified"
+        ]
+    }
+}
