@@ -1,3 +1,4 @@
+/* Dark Theme (Default) */
 :root {
     --primary-color: #00d4ff;
     --secondary-color: #5b21b6;
@@ -11,6 +12,110 @@
     --glass-border: rgba(255, 255, 255, 0.1);
     --shadow-primary: 0 8px 32px rgba(0, 212, 255, 0.15);
     --shadow-secondary: 0 20px 40px rgba(0, 0, 0, 0.3);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-hover: rgba(255, 255, 255, 0.08);
+}
+
+/* Light Theme */
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary-color: #0ea5e9;
+        --secondary-color: #7c3aed;
+        --tertiary-color: #ea580c;
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8fafc;
+        --bg-tertiary: #f1f5f9;
+        --text-primary: #1e293b;
+        --text-secondary: rgba(30, 41, 59, 0.7);
+        --glass-bg: rgba(255, 255, 255, 0.7);
+        --glass-border: rgba(30, 41, 59, 0.1);
+        --shadow-primary: 0 8px 32px rgba(14, 165, 233, 0.15);
+        --shadow-secondary: 0 20px 40px rgba(0, 0, 0, 0.1);
+        --card-bg: rgba(255, 255, 255, 0.8);
+        --card-border: rgba(30, 41, 59, 0.1);
+        --card-hover: rgba(255, 255, 255, 0.95);
+    }
+
+    /* Light theme specific adjustments */
+    body {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+    }
+
+    .about-section {
+        background: linear-gradient(135deg, rgba(14, 165, 233, 0.05), rgba(124, 58, 237, 0.05));
+    }
+
+    .floating-orb {
+        background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(124, 58, 237, 0.1));
+        border: 1px solid rgba(14, 165, 233, 0.2);
+        box-shadow: 0 8px 32px rgba(14, 165, 233, 0.1);
+    }
+
+    .about-card::before {
+        background: linear-gradient(135deg, rgba(14, 165, 233, 0.05), rgba(124, 58, 237, 0.05));
+    }
+
+    .skill-badge {
+        background: rgba(14, 165, 233, 0.1);
+        border: 2px solid rgba(14, 165, 233, 0.2);
+    }
+
+    .skill-badge:hover {
+        background: rgba(14, 165, 233, 0.2);
+        border-color: rgba(14, 165, 233, 0.4);
+        color: var(--primary-color);
+        box-shadow: 0 10px 25px rgba(14, 165, 233, 0.2);
+    }
+
+    .project-card::before {
+        background: linear-gradient(135deg, rgba(14, 165, 233, 0.03), rgba(124, 58, 237, 0.03));
+    }
+
+    .project-tag {
+        background: rgba(14, 165, 233, 0.1);
+        border: 1px solid rgba(14, 165, 233, 0.2);
+    }
+
+    .project-tag:hover {
+        background: rgba(14, 165, 233, 0.2);
+        border-color: rgba(14, 165, 233, 0.4);
+    }
+
+    .cert-card::before {
+        background: conic-gradient(from 0deg, transparent, rgba(14, 165, 233, 0.1), transparent);
+    }
+
+    /* Scrollbar for light theme */
+    ::-webkit-scrollbar-track {
+        background: var(--bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    }
+
+    /* Navigation adjustments for light theme */
+    nav {
+        background: rgba(255, 255, 255, 0.8);
+        border-bottom: 1px solid rgba(30, 41, 59, 0.1);
+    }
+
+    nav.scrolled {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 8px 32px rgba(14, 165, 233, 0.1);
+    }
+
+
+    /* Contact section for light theme */
+    .contact {
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Mobile menu for light theme */
+    .nav-links.mobile-open {
+        background: var(--bg-primary);
+    }
 }
 
 * {
@@ -106,7 +211,10 @@ nav.scrolled {
 }
 
 .nav-links a {
-    color: var(--text-secondary);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-decoration: none;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -132,7 +240,7 @@ nav.scrolled {
 }
 
 .nav-links a:hover {
-    color: var(--text-primary);
+    -webkit-text-fill-color: white;
     transform: translateY(-2px);
 }
 
@@ -146,6 +254,7 @@ nav.scrolled {
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
+    z-index: 1001;
 }
 
 .mobile-menu span {
@@ -154,6 +263,73 @@ nav.scrolled {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     border-radius: 2px;
     transition: all 0.3s ease;
+}
+
+/* Mobile menu animation */
+.mobile-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile navigation menu */
+.nav-links.mobile-open {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg-primary);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    z-index: 1000;
+    animation: slideInMobile 0.3s ease forwards;
+}
+
+@keyframes slideInMobile {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-links.mobile-open a {
+    font-size: 1.5rem;
+    padding: 20px 40px;
+    border-radius: 15px;
+    opacity: 0;
+    animation: fadeInStagger 0.3s ease forwards;
+}
+
+.nav-links.mobile-open a:nth-child(1) { animation-delay: 0.1s; }
+.nav-links.mobile-open a:nth-child(2) { animation-delay: 0.2s; }
+.nav-links.mobile-open a:nth-child(3) { animation-delay: 0.3s; }
+.nav-links.mobile-open a:nth-child(4) { animation-delay: 0.4s; }
+.nav-links.mobile-open a:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInStagger {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Hero Section with Modern Animations */
@@ -490,9 +666,9 @@ nav.scrolled {
 }
 
 .about-card {
-    background: var(--glass-bg);
+    background: var(--card-bg);
     backdrop-filter: blur(30px);
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--card-border);
     border-radius: 24px;
     padding: 40px;
     position: relative;
@@ -797,12 +973,12 @@ nav.scrolled {
 }
 
 .project-card {
-    background: var(--glass-bg);
+    background: var(--card-bg);
     backdrop-filter: blur(30px);
     border-radius: 24px;
     padding: 32px;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--card-border);
     position: relative;
     overflow: hidden;
     group: hover;
@@ -889,13 +1065,13 @@ nav.scrolled {
 }
 
 .cert-card {
-    background: var(--glass-bg);
+    background: var(--card-bg);
     backdrop-filter: blur(30px);
     border-radius: 24px;
     padding: 32px;
     text-align: center;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--card-border);
     position: relative;
     overflow: hidden;
 }
