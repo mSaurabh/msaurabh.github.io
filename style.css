@@ -1010,7 +1010,7 @@ nav.scrolled {
 }
 
 .cert-date {
-    color: var(--secondary-color);
+    color: var(--text-secondary);
     font-weight: 600;
     font-size: 0.9rem;
 }
