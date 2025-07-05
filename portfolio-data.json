@@ -6,10 +6,22 @@
     "about": {
         "title": "About Me",
         "paragraphs": [
-            "I'm a software engineer with 15+ years of experience working across different industries like banking, consulting, energy, and insurance. Right now, I work as a Senior Software Engineer at Pariveda Solutions where I help teams work better, build apps, and solve problems using technology.",
-            "I love taking complicated business problems and turning them into simple, working solutions. I've worked with teams all over the world and helped companies save time and money by making their processes better."
+            "I'm a software engineer with 15+ years of experience working across banking, consulting, energy, and insurance. As a Senior Software Engineer at Pariveda Solutions, I help teams work better together while building apps that solve real business problems.",
+            "What drives me is turning messy, complicated business challenges into clean, working solutions. I think differently than most people - I like to find new ways to solve old problems, even if it means taking some calculated risks along the way. My teams know they can count on me to speak up when something isn't working and to push through roadblocks until we get results.",
+            "I work best when I can dig into the technical details, spot patterns in data, and figure out how complex systems actually work. I'm the type of person who prefers to work independently, but I also know when to collaborate and when to teach others what I've learned. I say what I mean and mean what I say - no fluff, just straight talk about what needs to happen."
         ],
-        "skills": ["Java", "React", "JavaScript", "SQL", "C#", "React Native", "TypeScript", "Google Cloud", "AWS", "Agile", "Leadership"]
+        "personalityTraits": {
+            "title": "How I Work Best",
+            "traits": [
+                "I think outside the box and come up with original solutions others might not see",
+                "I'm willing to take smart risks when I believe in the outcome",
+                "I cut through complexity to find the real problem that needs solving",
+                "I communicate directly - you'll always know where you stand with me",
+                "I work well on my own but also enjoy mentoring and teaching others",
+                "When I set a goal, I stick with it until it's done, even when it gets tough"
+            ]
+        },
+        "skills": ["React", "JavaScript", "SQL", "AWS", "TypeScript", "GCP", "Agile", "Leadership","Collaborator"]
     },
     "projects": {
         "title": "Featured Projects",
