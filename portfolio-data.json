@@ -1,68 +1,167 @@
 {
     "hero": {
         "name": "Saurabh Mankar",
-        "title": "Software Engineer & Full-Stack Developer"
+        "title": "Strategic Technology Leader & Software Engineering Manager",
+        "subtitle": "Global experience spanning software engineering, cloud architecture, and agile delivery"
     },
     "about": {
         "title": "About Me",
-        "paragraphs": [
-            "I'm a software engineer with 15+ years of experience working across banking, consulting, energy, and insurance. As a Senior Software Engineer at Pariveda Solutions, I help teams work better together while building apps that solve real business problems.",
-            "What drives me is turning messy, complicated business challenges into clean, working solutions. I think differently than most people - I like to find new ways to solve old problems, even if it means taking some calculated risks along the way. My teams know they can count on me to speak up when something isn't working and to push through roadblocks until we get results.",
-            "I work best when I can dig into the technical details, spot patterns in data, and figure out how complex systems actually work. I'm the type of person who prefers to work independently, but I also know when to collaborate and when to teach others what I've learned. I say what I mean and mean what I say - no fluff, just straight talk about what needs to happen."
+        "summary": "Strategic technology leader with global experience spanning software engineering, cloud architecture, and agile delivery. Proven ability to navigate complexity, influence stakeholders, and drive strategic transformation through AI innovation, cloud modernization, and process optimization. Passionate about building empowered teams, mentoring future leaders, and fostering a culture of curiosity and continuous improvement.",
+        "highlights": [
+            "15+ years of experience across banking, consulting, energy, and insurance sectors",
+            "Led solution delivery contributing to $1.3M+ in revenue through strategic consulting",
+            "Managed high-performing remote teams with 3 promotions achieved under my leadership",
+            "2024 Innovation Award recipient for process optimization initiatives"
         ],
-        "personalityTraits": {
-            "title": "How I Work Best",
-            "traits": [
-                "I think outside the box and come up with original solutions others might not see",
-                "I'm willing to take smart risks when I believe in the outcome",
-                "I cut through complexity to find the real problem that needs solving",
-                "I communicate directly - you'll always know where you stand with me",
-                "I work well on my own but also enjoy mentoring and teaching others",
-                "When I set a goal, I stick with it until it's done, even when it gets tough"
-            ]
+        "leadership": {
+            "title": "Leadership Philosophy",
+            "description": "I believe in leading by example with a management style focused on clarity, support, and empowerment. My approach combines strategic thinking with hands-on mentorship, fostering an environment where teams thrive and individuals grow into future leaders."
         },
-        "skills": ["React", "JavaScript", "SQL", "AWS", "TypeScript", "GCP", "Agile", "Leadership","Collaborator"]
+        "expertise": {
+            "title": "Areas of Expertise",
+            "functional": [
+                "Software Development & Engineering",
+                "Cloud Architecture & Infrastructure", 
+                "Agile & Scrum Leadership",
+                "Project & Program Management",
+                "Data Engineering & Pipeline Development",
+                "Stakeholder Collaboration",
+                "Global Team Coordination",
+                "Mentoring & Team Development"
+            ],
+            "technical": [
+                "Java", "C#", "JavaScript", "TypeScript", "SQL", "Python",
+                "ReactJS", "React Native", "NodeJS", "Spring Boot",
+                "AWS (Lambda, S3, Bedrock, CloudFormation)", "Google Cloud Platform",
+                "Azure DevOps", "Jira", "SQL Server", "OpenSearch"
+            ]
+        }
+    },
+    "experience": {
+        "title": "Professional Experience",
+        "positions": [
+            {
+                "company": "Pariveda Solutions",
+                "location": "Houston, TX",
+                "period": "August 2022 – Current",
+                "roles": [
+                    {
+                        "title": "Manager II of Software Engineering",
+                        "period": "December 2024 – Current",
+                        "achievements": [
+                            "Lead solution delivery for 3,500+ employee utility firm and SaaS crisis management provider serving 500+ organizations, contributing to $1.3M+ in revenue",
+                            "Managed high-performing remote team of 6 Engineers with effective bi-weekly meetings, resulting in 3 promotions for strong performance",
+                            "Architected Automated End-to-End and API testing framework using Serenity JS, securing $1.2M contract extension",
+                            "Designed and deployed AI-powered, AWS-hosted API search service for crisis management with comprehensive CI/CD pipelines",
+                            "Led 6-month strategic process optimization initiative, delivering data-backed proposal that secured $200K additional revenue",
+                            "Championed Jira Service Desk transition, cutting resolution time by 60% and earning 2024 Innovation Award",
+                            "Mentored new hires through biannual career development planning and performance reviews"
+                        ]
+                    },
+                    {
+                        "title": "Manager I of Software Engineering", 
+                        "period": "December 2023 – December 2024"
+                    },
+                    {
+                        "title": "Senior Associate",
+                        "period": "August 2022 – December 2023"
+                    }
+                ]
+            },
+            {
+                "company": "App Takeoff",
+                "location": "Remote",
+                "period": "January 2021 – August 2022",
+                "roles": [
+                    {
+                        "title": "Full Stack Developer",
+                        "achievements": [
+                            "Headed design and development of 'Champaigner' mobile mass messaging app for 1200+ financial advising users, generating $50K+ revenue in 4 months",
+                            "Boosted cloud efficiency through Google Cloud Functions, cutting new customer setup time by 50%",
+                            "Developed Google Cloud Authentication tool to migrate user credentials, reducing manual migration time by 10-15 days",
+                            "Built multiple Cloud Functions and custom APIs with Cloud Firestore for scalable NoSQL data storage",
+                            "Drove agile best practices as Scrum Master, increasing sprint output with elimination of 30% redundant features"
+                        ]
+                    }
+                ]
+            },
+            {
+                "company": "NetHealth (Formerly Optima Healthcare)",
+                "location": "Palm City, FL", 
+                "period": "May 2014 – November 2020",
+                "roles": [
+                    {
+                        "title": "QA & Software Engineer",
+                        "achievements": [
+                            "Spearheaded SQL-driven troubleshooting initiatives, cutting production issue resolution time by 50%",
+                            "Executed comprehensive QA and test automation using Gherkin-based test cases",
+                            "Developed C# proof-of-concept tool to streamline client data setup, reducing manual effort from 2-3 hours to 30 minutes"
+                        ]
+                    }
+                ]
+            },
+            {
+                "company": "Infosys Pvt. Ltd.",
+                "location": "Bangalore, India",
+                "period": "March 2009 – May 2012", 
+                "roles": [
+                    {
+                        "title": "Systems Engineer",
+                        "achievements": [
+                            "Contributed to early development of flagship banking product, writing core code",
+                            "Collaborated with offshore teams in Singapore for comprehensive testing and issue resolution via Jira"
+                        ]
+                    }
+                ]
+            }
+        ]
     },
     "projects": {
-        "title": "Featured Projects",
+        "title": "Key Projects & Achievements",
         "items": [
             {
-                "title": "AI Crisis Management API",
-                "description": "Built a smart API that helps crisis management teams get the right information fast. The old system was just a handbook - now it's an intelligent service that knows what you need and gives you the right answers for emergency situations.",
-                "technologies": ["AWS Lambda", "AWS Bedrock", "API Development", "Data Processing", "AI/ML"]
+                "title": "AI-Powered Crisis Management API",
+                "description": "Designed and deployed an intelligent AWS-hosted API search service that transforms static handbook content into a dynamic digital assistant. Enabled 24/7 stakeholder access to critical incident information with comprehensive CI/CD pipelines and Infrastructure as Code.",
+                "technologies": ["AWS Lambda", "AWS Bedrock", "AWS OpenSearch", "AWS CloudFormation", "CI/CD", "Infrastructure as Code"],
+                "impact": "Rapid access to crisis management content, seamless data updates, client self-sufficiency through comprehensive documentation"
             },
             {
-                "title": "Help Desk System Upgrade",
-                "description": "Our team was drowning in emails from a single inbox. I led the move to Jira Service Desk and built dashboards that show what's actually happening. Now we solve problems 50-60% faster because we can see patterns and track everything properly.",
-                "technologies": ["Jira", "Dashboard Development", "Process Improvement", "Data Analytics"]
+                "title": "Automated Testing Framework Architecture", 
+                "description": "Led architecture for comprehensive End-to-End and API testing framework using Serenity JS screenplay pattern, integrated with Jenkins for daily execution, error alerts, and stakeholder-friendly dashboards. Successfully replaced ineffective QA processes.",
+                "technologies": ["Serenity JS", "Jenkins", "API Testing", "Dashboard Development", "QA Automation"],
+                "impact": "Delivered testing POC within 4 months, secured $1.2M contract extension, eliminated ineffective QA processes"
             },
             {
-                "title": "Champagner Messaging App",
-                "description": "Built a mobile app that lets businesses send mass messages to their customers. The app made over $50K in just 4 months and cut setup time in half by connecting everything to Google Cloud automatically.",
-                "technologies": ["React Native", "Google Cloud Functions", "Mobile Development", "TypeScript"]
+                "title": "Strategic Process Optimization Initiative",
+                "description": "Led comprehensive 6-month analysis of SQL Server report development inefficiencies through interviews and workflow analysis. Delivered data-backed proposal that transformed team performance and revenue generation.",
+                "technologies": ["SQL Server", "Process Analysis", "Workflow Optimization", "Data Analytics"],
+                "impact": "Secured $200K additional revenue, achieved 75% reduction in report backlog, enabled sustainable team performance"
             },
             {
-                "title": "Website Technology Upgrade",
-                "description": "Led a team to move our old website from outdated Knockout.js to modern React. The new site loads faster, works better on phones, and is much easier for developers to update and maintain.",
-                "technologies": ["React", "JavaScript", "Frontend Migration", "Ilities Framework"]
+                "title": "Champaigner Mobile Messaging Platform",
+                "description": "Headed design and development of business-critical custom mobile mass messaging application serving 1200+ financial advising users across global markets. Managed roadmap discussions and mentored international teammates.",
+                "technologies": ["React Native", "Google Cloud Functions", "Cloud Firestore", "Mobile Development", "Global Deployment"],
+                "impact": "Generated $50K+ revenue in 4 months, cut customer setup time by 50%, enabled multi-tenant architecture transition"
             },
             {
-                "title": "Data Pipeline Builder",
-                "description": "Created tools that automatically pull data from different sources and put it all in one place. What used to take 2 weeks of manual work now happens in 2 days, and we can spot problems 50% faster.",
-                "technologies": ["C#", "SQL Server", "Data Engineering", "Visual Studio", "ETL"]
+                "title": "Enterprise Service Desk Transformation",
+                "description": "Championed transition from inefficient shared mailbox system to comprehensive Jira Service Desk solution. Built and trained 200 users on six management dashboards for tracking and optimization.",
+                "technologies": ["Jira Service Management", "Dashboard Development", "Process Documentation", "User Training"],
+                "impact": "Cut resolution time by 60%, earned 2024 Innovation Award, increased technology funding for future initiatives"
             },
             {
-                "title": "Banking Product Development",
-                "description": "At Infosys, I helped build one of the company's main banking products from the ground up. Worked with teams in India and Singapore to make sure everything worked smoothly for customers around the world.",
-                "technologies": ["Java", "HTML", "CSS", "SQL", "Shell Scripting", "International Collaboration"]
+                "title": "Cloud Migration & Authentication System",
+                "description": "Developed sophisticated tool using Google Cloud Authentication to migrate user credentials across multiple GCP environments into unified architecture, enabling seamless transition to multi-tenant web application.",
+                "technologies": ["Google Cloud Authentication", "Multi-tenant Architecture", "Cloud Migration", "GCP"],
+                "impact": "Reduced manual migration time by 10-15 days, enabled modern architecture transition, resolved legacy-to-modern app challenges"
             }
         ]
     },
     "certifications": {
-        "title": "Certifications & Education",
+        "title": "Education & Certifications",
         "items": [
             {
-                "title": "AWS AI Cloud Practitioner",
+                "title": "AWS Certified AI Practitioner",
                 "organization": "Amazon Web Services",
                 "date": "2024",
                 "logo": "https://images.credly.com/size/680x680/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png",
@@ -72,17 +171,25 @@
             {
                 "title": "Professional Scrum Master",
                 "organization": "Scrum.org",
-                "date": "March 2021",
+                "date": "2021",
                 "logo": "https://images.credly.com/size/680x680/images/a2790314-008a-4c3d-9553-f5e84eb359ba/image.png",
                 "verified": true,
                 "link": "https://www.credly.com/earner/earned/badge/66a9fd47-1a38-4d62-85f2-226983136d71"
             },
             {
-                "title": "M.S. Computer Engineering",
+                "title": "Master of Science, Computer Engineering",
                 "organization": "University of Central Florida",
-                "date": "May 2014",
+                "date": "2014",
                 "logo": "gradient",
                 "logoText": "MS",
+                "verified": false
+            },
+            {
+                "title": "Bachelor of Science, Electronics Engineering",
+                "organization": "Mumbai University", 
+                "date": "2009",
+                "logo": "gradient",
+                "logoText": "BS",
                 "verified": false
             }
         ]
@@ -93,7 +200,7 @@
             {
                 "title": "Email",
                 "value": "mankar.saurabh@gmail.com",
-                "description": "Direct Communication",
+                "description": "Professional Inquiries",
                 "icon": "📧",
                 "link": "mailto:mankar.saurabh@gmail.com"
             },
@@ -110,12 +217,20 @@
                 "description": "Code Repository",
                 "icon": "💻",
                 "link": "https://github.com/mSaurabh"
+            },
+            {
+                "title": "Personal Website",
+                "value": "Portfolio & Resume",
+                "description": "Complete Professional Profile",
+                "icon": "🌐",
+                "link": "#"
             }
         ],
         "footer": [
             "📍 Based in Houston, Texas",
             "🎓 M.S. Computer Engineering, University of Central Florida",
-            "🏆 Professional Scrum Master & AWS AI Cloud Practitioner Certified"
+            "🏆 AWS Certified AI Practitioner & Professional Scrum Master",
+            "📞 (330) 999-0690"
         ]
     }
 }
